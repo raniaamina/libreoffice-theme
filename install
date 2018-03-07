@@ -36,4 +36,7 @@ else
 fi
 
 cd ..
+rm libreoffice-theme.zip
+rm -rf libreoffice-theme-master
+
 
