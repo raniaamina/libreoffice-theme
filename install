@@ -1,0 +1,12 @@
+#!/bin/bash
+
+cp img/footer.png ~/.config/libreoffice/4/user/gallery/personas/LibreOffice-Light-Ambiance/footer.png
+cp img/header.png ~/.config/libreoffice/4/user/gallery/personas/LibreOffice-Light-Ambiance/header.png
+cp img/preview.png ~/.config/libreoffice/4/user/gallery/personas/LibreOffice-Light-Ambiance/preview.png
+cp registrymodifications.xcu ~/.config/libreoffice/4/user/registrymodifications.xcu
+
+cp images_office2013.zip /opt/libreoffice*/share/config/images_office2013.zip
+
+atau
+
+cp images_office2013.zip /usr/lib/libreoffice/share/config/images_office2013.zip
