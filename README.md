@@ -34,7 +34,7 @@ curl https://raw.githubusercontent.com/raniaamina/libreoffice-theme/master/unins
 ```
 
 ## Kredit
-- Skrip ini ditulis bersama [Sofyan Sugiyanto](http://t.me/artemtech)
+- Skrip ini ditulis bersama [Sofyan Sugianto](http://t.me/artemtech)
 - Tema persona diambil dari [Tema Persona Firefox - Light Ambiance](https://addons.mozilla.org/id/firefox/addon/libreoffice-4-light-ambiance/)
 - Tema ikon *Office 2013 Theme for LibreOffice* oleh [Charliecnr](https://charliecnr.deviantart.com/art/Office-2013-theme-for-LibreOffice-512127527)
 - Gambar original pada splash screen oleh [Fauzan](http://t.me/ozantliuky)
