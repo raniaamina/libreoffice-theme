@@ -16,10 +16,10 @@ then
     done
 else
     sudo rm /usr/lib/libreoffice/share/config/images_office2013.zip
-    sudo rm /usr/lib/libreoffice/share/program/intro.png
-    sudo mv /usr/lib/libreoffice/share/program/intro.png.backup /usr/lib/libreoffice/share/program/intro.png
-    sudo rm /usr/lib/libreoffice/share/program/sofficerc
-    sudo mv /usr/lib/libreoffice/share/program/sofficerc.backup /usr/lib/libreoffice/share/program/sofficerc
+    sudo rm /usr/lib/libreoffice/program/intro.png
+    sudo mv /usr/lib/libreoffice/program/intro.png.backup /usr/lib/libreoffice/program/intro.png
+    sudo rm /usr/lib/libreoffice/program/sofficerc
+    sudo mv /usr/lib/libreoffice/program/sofficerc.backup /usr/lib/libreoffice/share/program/sofficerc
 fi
 
 cd ..
