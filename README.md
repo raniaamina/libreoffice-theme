@@ -4,19 +4,21 @@ Skrip ini dibuat untuk mempermudah pengguna LibreOffice mengubah tampilan LibreO
 >Skrip ini belumlah sempurna dan masih perlu banyak perbaikan, silakan digunakan dengan kesadaran penuh bahwa RISIKO SEPENUHNYA DITANGGUNG SENDIRI!
 
 ## Tangkapan layar
-<p align=center>
+**Proses pemasangan**
 ![Proses pemasangan](screenshot/ss-1.png)
-Proses pemasangan
 
+
+**Tampilan Splash**
 ![Proses pemasangan](screenshot/ss-2.png)
-Tampilan Splash
 
+
+**Tampilan Awal LibreOffice**
 ![Proses pemasangan](screenshot/ss-3.png)
-Tampilan Awal LibreOffice
 
+
+**Tampilan LibreOffice Writer**
 ![Proses pemasangan](screenshot/ss-4.png)
-Tampilan LibreOffice Writer
-</p>
+
 
 ## Pemasangan
 Sebelum melakukan perintah pemasangan di bawah ini, pastikan paket `curl` telah dipasang di komputer Anda. Tutup semua program LibreOffice, kemudian jalankan perintah berikut di Terminal. Pemasangan ini membutuhkan akses **root** untuk menyalin beberapa elemen ke dalam sistem.
