@@ -9,17 +9,17 @@ then
     for ITEM in ${OPTDIR[@]}
     do
         sudo rm /opt/$ITEM/share/config/images_office2013.zip
-	sudo rm /opt/$ITEM/program/intro.png        
-	sudo mv /opt/$ITEM/program/intro.png.backup /opt/$ITEM/program/intro.png
+        sudo rm /opt/$ITEM/program/intro.png
+        sudo mv /opt/$ITEM/program/intro.png.backup /opt/$ITEM/program/intro.png
         sudo rm /opt/$ITEM/program/sofficerc
-	sudo mv /opt/$ITEM/program/sofficerc.backup /opt/$ITEM/program/sofficerc
+        sudo mv /opt/$ITEM/program/sofficerc.backup /opt/$ITEM/program/sofficerc
     done
 else
     sudo rm /usr/lib/libreoffice/share/config/images_office2013.zip
-    sudo rm /usr/lib/libreoffice/share/program/intro.png
-    sudo mv /usr/lib/libreoffice/share/program/intro.png.backup /usr/lib/libreoffice/share/program/intro.png
-    sudo rm /usr/lib/libreoffice/share/program/sofficerc
-    sudo mv /usr/lib/libreoffice/share/program/sofficerc.backup /usr/lib/libreoffice/share/program/sofficerc
+    sudo rm /usr/lib/libreoffice/program/intro.png
+    sudo mv /usr/lib/libreoffice/program/intro.png.backup /usr/lib/libreoffice/program/intro.png
+    sudo rm /usr/lib/libreoffice/program/sofficerc
+    sudo mv /usr/lib/libreoffice/program/sofficerc.backup /usr/lib/libreoffice/program/sofficerc
 fi
 
 cd ..
