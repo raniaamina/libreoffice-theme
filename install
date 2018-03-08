@@ -23,15 +23,15 @@ then
         sudo cp images_office2013.zip /opt/$ITEM/share/config/images_office2013.zip
         sudo mv /opt/$ITEM/program/intro.png /opt/$ITEM/program/intro.png.backup
         sudo cp img/intro.png /opt/$ITEM/program/intro.png
-	    sudo mv /opt/$ITEM/program/sofficerc /opt/$ITEM/program/sofficerc.backup
+        sudo mv /opt/$ITEM/program/sofficerc /opt/$ITEM/program/sofficerc.backup
         sudo cp sofficerc /opt/$ITEM/program/sofficerc
     done
 else
     sudo cp images_office2013.zip /usr/lib/libreoffice/share/config/images_office2013.zip
-    sudo mv /usr/lib/libreoffice/share/program/intro.png /usr/lib/libreoffice/share/program/intro.png.backup
-    sudo cp img/intro.png /usr/lib/libreoffice/share/program/intro.png
-    sudo mv /usr/lib/libreoffice/share/program/sofficerc /usr/lib/libreoffice/share/program/sofficerc.backup
-    sudo cp sofficerc /usr/lib/libreoffice/share/program/sofficerc
+    sudo mv /usr/lib/libreoffice/program/intro.png /usr/lib/libreoffice/program/intro.png.backup
+    sudo cp img/intro.png /usr/lib/libreoffice/program/intro.png
+    sudo mv /usr/lib/libreoffice/program/sofficerc /usr/lib/libreoffice/program/sofficerc.backup
+    sudo cp sofficerc /usr/lib/libreoffice/program/sofficerc
 fi
 
 cd ..
