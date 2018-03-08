@@ -1,21 +1,20 @@
 #!/bin/bash
 
-# Unduh source
+# Download Source
 curl https://codeload.github.com/raniaamina/libreoffice-theme/zip/master --output libreoffice-theme.zip
 unzip libreoffice-theme.zip && cd libreoffice-theme-master
 mkdir -p ~/.config/libreoffice/4/user/gallery/personas/LibreOffice-Light-Ambiance
 
 
 
-# Salin tema Persona ke Gallery
+# Copying Persona Theme to Gallery
 cp img/footer.png ~/.config/libreoffice/4/user/gallery/personas/LibreOffice-Light-Ambiance/footer.png
 cp img/header.png ~/.config/libreoffice/4/user/gallery/personas/LibreOffice-Light-Ambiance/header.png
 cp img/preview.png ~/.config/libreoffice/4/user/gallery/personas/LibreOffice-Light-Ambiance/preview.png
 mv ~/.config/libreoffice/4/user/registrymodifications.xcu ~/.config/libreoffice/4/user/registrymodifications.xcu.backup
 cp registrymodifications.xcu ~/.config/libreoffice/4/user/registrymodifications.xcu
 
-# Salin berkas tema zip ke folder LO
-
+# Copying Icon and Splash Theme (Need Root Password)
 OPTDIR=(`ls /opt | grep libreoffice`)
 if [[ -n $OPTDIR ]]
 then
@@ -24,7 +23,7 @@ then
         sudo cp images_office2013.zip /opt/$ITEM/share/config/images_office2013.zip
         sudo mv /opt/$ITEM/program/intro.png /opt/$ITEM/program/intro.png.backup
         sudo cp img/intro.png /opt/$ITEM/program/intro.png
-	sudo mv /opt/$ITEM/program/sofficerc /opt/$ITEM/program/sofficerc.backup
+	    sudo mv /opt/$ITEM/program/sofficerc /opt/$ITEM/program/sofficerc.backup
         sudo cp sofficerc /opt/$ITEM/program/sofficerc
     done
 else
