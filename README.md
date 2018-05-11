@@ -1,6 +1,6 @@
 # libreoffice-theme
 ## Skrip untuk Mengubah Tampilan LibreOffice
-Skrip ini dibuat untuk mempermudah pengguna LibreOffice mengubah tampilan LibreOffice menjadi lebih menarik. Bebeberapa hal yang akan diubah oleh skrip ini anatara lain; (a) *splash screen* LibreOffice, (b), tema ikon, dan (c) tema persona.
+Skrip ini sebenarnya sama dengan yang sebelumnya, namun karena di openSUSE itu letak LibreOffice berbeda maka saya buatkan versi openSUSE-nya. dan adapun skrip dibuat untuk mempermudah pengguna LibreOffice mengubah tampilan LibreOffice menjadi lebih menarik. Bebeberapa hal yang akan diubah oleh skrip ini anatara lain; (a) *splash screen* LibreOffice, (b), tema ikon, dan (c) tema persona.
 >Skrip ini belumlah sempurna dan masih perlu banyak perbaikan, silakan digunakan dengan kesadaran penuh bahwa RISIKO SEPENUHNYA DITANGGUNG SENDIRI!
 
 ## Tangkapan layar
