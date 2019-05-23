@@ -27,7 +27,7 @@ function install_splash {
 # install sofficerc
 function install_sofficerc {
     sudo mv $LIBREOFFICE_PATH/program/sofficerc $LIBREOFFICE_PATH/program/sofficerc.backup
-    sudo cp themes/$PREFERED_THEME/program/sofficerc $LIBREOFFICE_PATH/program/sofficerc.backup
+    sudo cp themes/$PREFERED_THEME/program/sofficerc $LIBREOFFICE_PATH/program/sofficerc
 }
 
 # install personas file
@@ -59,7 +59,7 @@ function apply_installed_theme {
 }
 
 # warning banner
-function display_warning {
+function display_warning_banner {
     read -r -p "This action will replace default theme with your selected theme.
 Make sure no LibreOffice task running at this moment. Continue? [Y/n] " input
     case $input in
