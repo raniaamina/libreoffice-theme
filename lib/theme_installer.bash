@@ -44,7 +44,7 @@ function apply_installed_theme {
     read -r -p "Apply your new theme right now? [y/n] " input
     case $input in
         [yY][eE][sS]|[yY])
-            sed -i 's|.*PersonaSettings.*|'"<item oor:path=\"/org.openoffice.Office.Common/Misc\"><prop oor:name=\"PersonaSettings\" oor:op=\"fuse\"><value>$PREFERED_THEME;$PREFERED_THEME;$PREFERED_THEME/preview.png;$PREFERED_THEME/header.png;$PREFERED_THEME/footer.png;#ffffff;#000000</value></prop></item>"'|'  ~/.config/libreoffice/4/user/registrymodifications.xcu
+            sed -i 's|.*PersonaSettings.*|'"<item oor:path=\"/org.openoffice.Office.Common/Misc\"><prop oor:name=\"PersonaSettings\" oor:op=\"fuse\"><value>$PREFERED_THEME;$PREFERED_THEME;$PREFERED_THEME/preview.png;$PREFERED_THEME/header.png;$PREFERED_THEME/footer.png;#ffffff;#000000</value></prop></item>"'|'  $LIBREOFFICE_CONFIG_DIR/registrymodifications.xcu
             echo "done"
             exit
             ;;
