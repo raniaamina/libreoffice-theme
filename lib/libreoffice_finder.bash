@@ -85,7 +85,7 @@ function check_flatpak_install {
 # check download deb/rpm from web
 function check_download_install {
     echo "Verifying installation path ..."
-    local optdir="$(ls -d /opt/* | grep libreoffice)"
+    local optdir=($(ls -d /opt/* | grep libreoffice))
     if [[ -n optdir ]]; then
         LIBREOFFICE_PATH=$optdir
     else
