@@ -32,7 +32,7 @@ function installation_path_check {
         esac
     done;
     echo "LibreOffice installation path: $LIBREOFFICE_PATH"
-    exit
+
 }
 
 # check distro
@@ -104,4 +104,3 @@ function check_snap_install {
     fi
 }
 
-installation_path_check
