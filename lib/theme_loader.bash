@@ -3,7 +3,7 @@
 # populate theme from themes folder
 function populate_themes {
     if [[ -z $THEMES ]]; then
-        THEMES="$(ls themes/)"
+        THEMES=($(ls themes/))
     fi
 }
 
@@ -34,7 +34,7 @@ function check_theme_components {
         if [[ -d themes/$ITEM/share/gallery/personas/$ITEM ]]; then
             pushd themes/$ITEM/share/gallery/personas/$ITEM > /dev/null
             # check personas_list.txt
-            if [[ ! -s $PWD/../perso333nas_list.txt ]]; then
+            if [[ ! -s $PWD/../personas_list.txt ]]; then
                 echo "[$ITEM] $PWD/../personas_list.txt not found, exiting ..."
                 exit
             fi
