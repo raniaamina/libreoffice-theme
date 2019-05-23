@@ -57,3 +57,21 @@ function apply_installed_theme {
             ;;
     esac
 }
+
+# warning banner
+function display_warning {
+    read -r -p "This action will replace default theme with your selected theme.
+Make sure no LibreOffice task running at this moment. Continue? [Y/n] " input
+    case $input in
+        [yY][eE][sS]|[yY])
+            echo "done"
+            ;;
+        [nN][oO]|[nN])
+            exit
+            ;;
+        *)
+            echo "Invalid input..."
+            exit 1
+            ;;
+    esac
+}
