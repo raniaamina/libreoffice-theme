@@ -34,6 +34,7 @@ function install_sofficerc {
 function install_personas {
     sudo mv $LIBREOFFICE_PATH/share/gallery/personas/personas_list.txt $LIBREOFFICE_PATH/share/gallery/personas/personas_list.txt.backup
     sudo cp -r themes/$PREFERED_THEME/share/gallery/personas/$PREFERED_THEME $LIBREOFFICE_PATH/share/gallery/personas/
+    sudo cp themes/$PREFERED_THEME/share/gallery/personas/personas_list.txt $LIBREOFFICE_PATH/share/gallery/personas/personas_list.txt
     pushd $LIBREOFFICE_PATH/share/gallery/personas/ > /dev/null
     sudo bash -c "cat personas_list.txt.backup >> personas_list.txt"
     popd > /dev/null
@@ -45,6 +46,7 @@ function apply_installed_theme {
     case $input in
         [yY][eE][sS]|[yY])
             sed -i 's|.*PersonaSettings.*|'"<item oor:path=\"/org.openoffice.Office.Common/Misc\"><prop oor:name=\"PersonaSettings\" oor:op=\"fuse\"><value>$PREFERED_THEME;$PREFERED_THEME;$PREFERED_THEME/preview.png;$PREFERED_THEME/header.png;$PREFERED_THEME/footer.png;#ffffff;#000000</value></prop></item>"'|'  $LIBREOFFICE_CONFIG_DIR/registrymodifications.xcu
+            sed -i 's|.*Persona" oor.*|'"<item oor:path=\"/org.openoffice.Office.Common/Misc\"><prop oor:name=\"Persona\" oor:op=\"fuse\"><value>default</value></prop></item>"'|'  $LIBREOFFICE_CONFIG_DIR/registrymodifications.xcu
             echo "done"
             exit
             ;;

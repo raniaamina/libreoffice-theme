@@ -56,7 +56,7 @@ function check_distro {
 function check_debian_install {
     echo "Verifying installation path ..."
     LIBREOFFICE_PATH="$(dpkg -L libreoffice-common | grep program/sofficerc | head -c -18)"
-    LIBREOFFICE_CONFIG_DIR="~/.config/libreoffice/4/user"
+    LIBREOFFICE_CONFIG_DIR="$HOME/.config/libreoffice/4/user"
     if [[ $LIBREOFFICE_PATH == "" ]]; then
         echo "[dpkg] LibreOffice was not installed, exiting ..."
     fi
@@ -66,7 +66,7 @@ function check_debian_install {
 function check_opensuse_install {
     echo "Verifying installation path ..."
     LIBREOFFICE_PATH="$(rpm -ql libreoffice | grep program/sofficerc | head -c -18)"
-    LIBREOFFICE_CONFIG_DIR="~/.config/libreoffice/4/user"
+    LIBREOFFICE_CONFIG_DIR="$HOME/.config/libreoffice/4/user"
     if [[ $LIBREOFFICE_PATH == "" ]]; then
         echo "[zypper] LibreOffice was not installed, exiting ..."
         exit
@@ -78,7 +78,7 @@ function check_flatpak_install {
     echo "Verifying installation path ..."
     if [[ -d /var/lib/flatpak/app/org.libreoffice.LibreOffice/x86_64/stable/active/files/libreoffice ]]; then
         LIBREOFFICE_PATH="/var/lib/flatpak/app/org.libreoffice.LibreOffice/x86_64/stable/active/files/libreoffice"
-        LIBREOFFICE_CONFIG_DIR="~/.var/app/org.libreoffice.LibreOffice/config/libreoffice/4/user"
+        LIBREOFFICE_CONFIG_DIR="$HOME/.var/app/org.libreoffice.LibreOffice/config/libreoffice/4/user"
     else
         echo "[Flatpak] LibreOffice installation path not found, exiting ..."
         exit
@@ -91,7 +91,7 @@ function check_download_install {
     local optdir=($(ls -d /opt/* | grep libreoffice))
     if [[ -n optdir ]]; then
         LIBREOFFICE_PATH=$optdir
-        LIBREOFFICE_CONFIG_DIR="~/.config/libreoffice/4/user"
+        LIBREOFFICE_CONFIG_DIR="$HOME/.config/libreoffice/4/user"
     else
         echo "[Web Install] LibreOffice installation path not found, exiting ..."
         exit
@@ -103,7 +103,7 @@ function check_snap_install {
     echo "Verifying installation path ..."
     if [[ -d /snap/libreoffice/current/lib/libreoffice ]]; then
         LIBREOFFICE_PATH="/snap/libreoffice/current/lib/libreoffice"
-        LIBREOFFICE_CONFIG_DIR="~/snap/libreoffice/current/.config/libreoffice/4/user"
+        LIBREOFFICE_CONFIG_DIR="$HOME/snap/libreoffice/current/.config/libreoffice/4/user"
     else
         echo "[Snap] LibreOffice installation path not found, exiting ..."
     fi
