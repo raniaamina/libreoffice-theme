@@ -38,3 +38,22 @@ function install_personas {
     sudo bash -c "cat personas_list.txt.backup >> personas_list.txt"
     popd > /dev/null
 }
+
+# apply theme for user
+function apply_installed_theme {
+    read -r -p "Apply your new theme right now? [y/n] " input
+    case $input in
+        [yY][eE][sS]|[yY])
+            sed -i 's|.*PersonaSettings.*|'"<item oor:path=\"/org.openoffice.Office.Common/Misc\"><prop oor:name=\"PersonaSettings\" oor:op=\"fuse\"><value>$PREFERED_THEME;$PREFERED_THEME;$PREFERED_THEME/preview.png;$PREFERED_THEME/header.png;$PREFERED_THEME/footer.png;#ffffff;#000000</value></prop></item>"'|'  ~/.config/libreoffice/4/user/registrymodifications.xcu
+            echo "done"
+            exit
+            ;;
+        [nN][oO]|[nN])
+            exit
+            ;;
+        *)
+            echo "Invalid input..."
+            exit 1
+            ;;
+    esac
+}
