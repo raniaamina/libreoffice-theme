@@ -7,8 +7,15 @@ check_theme_components
 clear
 
 # welcome text
-echo "Welcome to LibreOffice Theme Changer"
+echo "========== WELCOME TO: ==========
+ _     ___            _____ ____
+| |   / _ \          |_   _/ ___|
+| |  | | | |  _____    | || |    
+| |__| |_| | |_____|   | || |___ 
+|_____\___/            |_| \____|
+================================="
 echo
+
 
 # select LibreOffice installation type
 source lib/libreoffice_finder.bash
