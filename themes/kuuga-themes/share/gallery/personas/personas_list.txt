@@ -1,1 +1,0 @@
-kuuga-theme;kuuga-theme;kuuga-theme/preview.png;kuuga-theme/header.png;kuuga-theme/footer.png;;#ffffff;#000000

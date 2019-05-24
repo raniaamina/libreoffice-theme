@@ -1,0 +1,1 @@
+kuuga;kuuga;kuuga/preview.png;kuuga/header.png;kuuga/footer.png;;#ffffff;#000000
