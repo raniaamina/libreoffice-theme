@@ -37,16 +37,20 @@ function installation_path_check {
 
 # check distro
 function check_distro {
-    local distro_detect=`lsb_release -si`
+    local distro_detect=(`cat /usr/lib/os-release | grep ID_LIKE | tail -c +9 | tr -d \"`)
     case "${distro_detect}" in
-        "Debian"|"Kali"|"Ubuntu")
+        "debian"|"ubuntu")
             check_debian_install
             ;;
-        "openSUSE"|"openSUSE project"|"SUSE LINUX" | "SUSE")
+        "suse"|"opensuse")
             check_opensuse_install
             ;;
+        "fedora"|"rhel")
+            check_fedora_install
+            ;;
         *)
-            echo "Your Distro is not supported yet for running this script,"
+            echo "Trying to find libreoffice installation path in common..."
+            check_other_install
             exit
             ;;
     esac
@@ -69,6 +73,17 @@ function check_opensuse_install {
     LIBREOFFICE_CONFIG_DIR="$HOME/.config/libreoffice/4/user"
     if [[ $LIBREOFFICE_PATH == "" ]]; then
         echo "[zypper] LibreOffice was not installed, exiting ..."
+        exit
+    fi
+}
+
+# check fedora
+function check_fedora_install {
+    echo "Verifying installation path ..."
+    LIBREOFFICE_PATH="$(rpm -ql libreoffice-core | grep program/sofficerc | head -c -18)"
+    LIBREOFFICE_CONFIG_DIR="$HOME/.config/libreoffice/4/user"
+    if [[ $LIBREOFFICE_PATH == "" ]]; then
+        echo "[rpm] LibreOffice was not installed, exiting ..."
         exit
     fi
 }
@@ -109,3 +124,26 @@ function check_snap_install {
     fi
 }
 
+# check other installation
+function check_other_install {
+    if [[ -e /usr/lib32/libreoffice/program/sofficerc ]]; then
+        LIBREOFFICE_PATH="/usr/lib32/libreoffice"
+    elif [[ -e /usr/lib64/libreoffice/program/sofficerc ]]; then
+        LIBREOFFICE_PATH="/usr/lib64/libreoffice"
+    elif [[ -e /usr/lib/libreoffice/program/sofficerc ]]; then
+        LIBREOFFICE_PATH="/usr/lib/libreoffice"
+    else
+        echo "Unable to find libreoffice installation in /usr/lib/libreoffice;/usr/lib32/libreoffice;/usr/lib64/libreoffice"
+        insert_manual_distro_installation
+    fi
+    LIBREOFFICE_CONFIG_DIR="$HOME/.config/libreoffice/4/user"  
+}
+
+function insert_manual_distro_installation {
+    read -pe "Enter LibreOffice path containing program/sofficerc manually (example: /usr/lib/libreoffice): " LIBREOFFICE_PATH
+    while [[ ! -e $LIBREOFFICE_PATH/program/sofficerc ]];
+    do
+        echo "$LIBREOFFICE_PATH/program/sofficerc does not exist"
+        read -pe "Enter LibreOffice path containing program/sofficerc manually (example: /usr/lib/libreoffice): " LIBREOFFICE_PATH
+    done
+}
