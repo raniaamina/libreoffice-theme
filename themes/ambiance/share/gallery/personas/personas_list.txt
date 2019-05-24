@@ -1,0 +1,1 @@
+ambiance;Ambiance;ambiance/preview.png;ambiance/header.png;ambiance/footer.png;;#ffffff;#000000
