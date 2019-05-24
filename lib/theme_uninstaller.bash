@@ -5,7 +5,7 @@ function populate_installed_theme {
     source libreoffice_finder.bash
     installation_path_check
 
-    $INSTALLED_THEMES=($(ls $LIBREOFFICE_PATH/share/gallery/personas/ --ignore={dark,gray,green,pink,sand,white,personas_list.txt*}))
+    INSTALLED_THEMES=($(ls $LIBREOFFICE_PATH/share/gallery/personas/ --ignore={dark,gray,green,pink,sand,white,personas_list.txt*}))
 }
 
 function uninstall_installed_theme {
