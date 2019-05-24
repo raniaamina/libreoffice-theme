@@ -42,6 +42,9 @@ done;
 source lib/theme_installer.bash
 display_warning_banner
 
+# check previous installed same theme
+check_is_theme_installed_before
+
 # installing theme by moving default files and copying new files (Need Root Password)
 install_theme
 

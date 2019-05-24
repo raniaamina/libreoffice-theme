@@ -66,7 +66,6 @@ function display_warning_banner {
 Make sure no LibreOffice task running at this moment. Continue? [Y/n] " input
     case $input in
         [yY][eE][sS]|[yY])
-            check_is_theme_installed_before
             ;;
         [nN][oO]|[nN])
             exit
