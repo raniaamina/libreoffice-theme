@@ -66,7 +66,7 @@ function display_warning_banner {
 Make sure no LibreOffice task running at this moment. Continue? [Y/n] " input
     case $input in
         [yY][eE][sS]|[yY])
-            echo "done"
+            check_is_theme_installed_before
             ;;
         [nN][oO]|[nN])
             exit
@@ -76,4 +76,25 @@ Make sure no LibreOffice task running at this moment. Continue? [Y/n] " input
             exit 1
             ;;
     esac
+}
+
+# check theme installed before
+function check_is_theme_installed_before {
+    if [[ -d $LIBREOFFICE_PATH/share/gallery/personas/$PREFERED_THEME ]]; then
+        read -r -p "$PREFERED_THEME has been installed before. Overwrite? [Y/n]" answer
+        case $answer in
+            [yY][eE][sS]|[yY])
+                echo "Overwriting $PREFERED_THEME..."
+                # delete personas_list before continue
+                sudo sed -i '/'"$PREFERED_THEME"'/d' $LIBREOFFICE_PATH/share/gallery/personas/personas_list.txt
+                ;;
+            [nN][oO]|[nN])
+                exit
+                ;;
+            *)
+                echo "Invalid input..."
+                exit 1
+                ;;
+        esac
+    fi
 }
