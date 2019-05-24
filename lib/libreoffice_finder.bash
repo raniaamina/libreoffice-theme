@@ -51,7 +51,6 @@ function check_distro {
         *)
             echo "Trying to find libreoffice installation path in common..."
             check_other_install
-            exit
             ;;
     esac
 }
@@ -126,24 +125,26 @@ function check_snap_install {
 
 # check other installation
 function check_other_install {
-    if [[ -e /usr/lib32/libreoffice/program/sofficerc ]]; then
+    if [[ -e /usr/lib32/libreoffice/program/soffice.bin ]]; then
         LIBREOFFICE_PATH="/usr/lib32/libreoffice"
-    elif [[ -e /usr/lib64/libreoffice/program/sofficerc ]]; then
+    elif [[ -e /usr/lib64/libreoffice/program/soffice.bin ]]; then
         LIBREOFFICE_PATH="/usr/lib64/libreoffice"
-    elif [[ -e /usr/lib/libreoffice/program/sofficerc ]]; then
+    elif [[ -e /usr/lib/libreoffice/program/soffice.bin ]]; then
         LIBREOFFICE_PATH="/usr/lib/libreoffice"
     else
         echo "Unable to find libreoffice installation in /usr/lib/libreoffice;/usr/lib32/libreoffice;/usr/lib64/libreoffice"
+        echo
         insert_manual_distro_installation
     fi
     LIBREOFFICE_CONFIG_DIR="$HOME/.config/libreoffice/4/user"  
 }
 
 function insert_manual_distro_installation {
-    read -pe "Enter LibreOffice path containing program/sofficerc manually (example: /usr/lib/libreoffice): " LIBREOFFICE_PATH
-    while [[ ! -e $LIBREOFFICE_PATH/program/sofficerc ]];
+    echo "Enter LibreOffice folder containing program/soffice.bin manually (example: /usr/lib/libreoffice)"
+    read -e -p "Path: " LIBREOFFICE_PATH
+    while [ ! -e $LIBREOFFICE/program/soffice.bin ];
     do
-        echo "$LIBREOFFICE_PATH/program/sofficerc does not exist"
-        read -pe "Enter LibreOffice path containing program/sofficerc manually (example: /usr/lib/libreoffice): " LIBREOFFICE_PATH
+        echo "Wrong path!"
+        read -e -p "Path: " LIBREOFFICE_PATH
     done
 }
