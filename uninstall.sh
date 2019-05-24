@@ -18,7 +18,7 @@ echo "Select theme to uninstall:"
 PS3='Enter the number: '
 select answer in "${INSTALLED_THEMES[@]}" Quit;
 do
-    for item in "{INSTALLED_THEMES[@]}" Quit; do
+    for item in "${INSTALLED_THEMES[@]}" Quit; do
         if [[ $item == $answer ]]; then
             if [[ $item == "Quit" ]]; then
                 exit
