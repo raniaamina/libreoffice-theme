@@ -142,7 +142,7 @@ function check_other_install {
 function insert_manual_distro_installation {
     echo "Enter LibreOffice folder containing program/soffice.bin manually (example: /usr/lib/libreoffice)"
     read -e -p "Path: " LIBREOFFICE_PATH
-    while [ ! -e $LIBREOFFICE/program/soffice.bin ];
+    while [ ! -e $LIBREOFFICE_PATH/program/soffice.bin ];
     do
         echo "Wrong path!"
         read -e -p "Path: " LIBREOFFICE_PATH
