@@ -50,7 +50,7 @@ then select the theme you want to delete.
 Please follow this steps to create a custom LibreOffice theme.
 
 
-### Understanding Disrectory Themes Hierarchy 
+### Understanding Directory Themes Hierarchy 
 
 The LO-TC use special directory hierarchy to make it easier for anyone who wants to create a custom theme and install it using LO-TC. Save and place each assets that will be created in the **themes** directory. LO-TC will automatically read the list of themes contained in the directory, we call them preinstalled themes.
 
