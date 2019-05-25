@@ -72,6 +72,14 @@ themes
                 └── personas_list.txt
 
 ```
+[UPDATE]
+Kami telah menyediakan perkakas tambahan untuk membantu Anda membuat folder tema secara lengkap dan cepat. Cukup jalankan perintah:
+
+```bash
+$ bash theme-creator.sh
+```
+
+kemudian masukkan nama tema yang Anda inginkan. Secara otomatis LO-TC akan membuat direktori tema sesuai dengan nama yang Anda masukkan ke dalam folder `themes`
 
 ### Menyiapkan Aset-Aset Gambar
 

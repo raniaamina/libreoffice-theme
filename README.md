@@ -73,6 +73,16 @@ themes
                 └── personas_list.txt
 
 ```
+[UPDATE]
+We have provided additional tools to help you create a full and fast theme folder. Just run the command:
+
+```bash
+$ bash theme-creator.sh
+```
+
+then enter the name of the theme you want. Automatically the LO-TC will create a theme directory according to the name you entered under the `themes` folder.
+
+
 ### Preparing Image Assets
 
 The pictures that must be prepared to make this theme include:
