@@ -20,12 +20,22 @@ function install_intro {
 
 # install splash
 function install_splash {
+    # check backup file, restore if exists to provide original intro.png
+    if [[ -e $LIBREOFFICE_PATH/program/intro.png.backup ]]; then
+        sudo mv $LIBREOFFICE_PATH/program/intro.png.backup $LIBREOFFICE_PATH/program/intro.png
+    fi
+    # then do install intro.png provided by prefered theme
     sudo mv $LIBREOFFICE_PATH/program/intro.png $LIBREOFFICE_PATH/program/intro.png.backup
     sudo cp themes/$PREFERED_THEME/program/intro.png $LIBREOFFICE_PATH/program/intro.png
 }
 
 # install sofficerc
 function install_sofficerc {
+    # check backup file, restore if exists to provide original sofficerc
+    if [[ -e $LIBREOFFICE_PATH/program/sofficerc.backup ]]; then
+        sudo mv $LIBREOFFICE_PATH/program/sofficerc.backup $LIBREOFFICE_PATH/program/sofficerc
+    fi
+    # then do install sofficerc provided by prefered theme
     sudo mv $LIBREOFFICE_PATH/program/sofficerc $LIBREOFFICE_PATH/program/sofficerc.backup
     sudo cp themes/$PREFERED_THEME/program/sofficerc $LIBREOFFICE_PATH/program/sofficerc
 }

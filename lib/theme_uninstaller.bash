@@ -10,10 +10,12 @@ function populate_installed_theme {
 function uninstall_installed_theme {
     echo "Uninstalling $PREFERED_THEME..."
     remove_theme_folder
-    echo "Uninstalling $PREFERED_THEME...(33%)"
+    echo "Uninstalling $PREFERED_THEME...(25%)"
     remove_personas_list
-    echo "Uninstalling $PREFERED_THEME...(67%)"
+    echo "Uninstalling $PREFERED_THEME...(50%)"
     remove_user_config
+    echo "Uninstalling $PREFERED_THEME...(75%)"
+    restore_splash
     echo "Uninstalling $PREFERED_THEME...(100%)"
     echo "Done"
 }
@@ -37,5 +39,16 @@ function remove_user_config {
     if [[ -s $LIBREOFFICE_CONFIG_DIR/registrymodifications.xcu ]]; then
         sed -i 's|.*Persona".*|'"<item oor:path=\"/org.openoffice.Office.Common/Misc\"><prop oor:name=\"Persona\" oor:op=\"fuse\"><value>no</value></prop></item>"'|' $LIBREOFFICE_CONFIG_DIR/registrymodifications.xcu
         sed -i 's|.*PersonaSettings.*|'"<item oor:path=\"/org.openoffice.Office.Common/Misc\"><prop oor:name=\"PersonaSettings\" oor:op=\"fuse\"><value></value></prop></item>"'|' $LIBREOFFICE_CONFIG_DIR/registrymodifications.xcu
+    fi
+}
+
+function restore_splash {
+    # restore intro
+    if [[ -e $LIBREOFFICE_PATH/program/intro.png.backup ]]; then
+        sudo mv $LIBREOFFICE_PATH/program/intro.png.backup $LIBREOFFICE_PATH/program/intro.png
+    fi
+    # restore sofficerc
+    if [[ -e $LIBREOFFICE_PATH/program/sofficerc.backup ]]; then
+        sudo mv $LIBREOFFICE_PATH/program/sofficerc.backup $LIBREOFFICE_PATH/program/sofficerc
     fi
 }
