@@ -1,0 +1,1 @@
+decade;Decade;decade/preview.png;decade/header.png;decade/footer.png;;#ffffff;#000000
