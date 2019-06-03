@@ -1,0 +1,1 @@
+asgardian;asgardian;asgardian/preview.png;asgardian/header.png;asgardian/footer.png;;#ffffff;#000000
